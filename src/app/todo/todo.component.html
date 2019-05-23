@@ -3,6 +3,7 @@
     <div *ngFor="let history of taskForm['controls'].task['controls']; let i=index">
       <div [formGroupName]="i">
         <input placeholder="Task Name" formControlName="name">
+        {{taskForm.get(['task', i, 'name']).touched | json}}
       </div>
     </div>
   </div>
@@ -11,6 +12,7 @@
 Address Form
 <form [formGroup]="addressForm">
   <input placeholder="Address Line1" formControlName="addressLine1">
+  {{addressForm.get('addressLine1').touched}}
   <input placeholder="Address Line2" formControlName="addressLine2">
   <input matInput placeholder="City" formControlName="city">
 </form>
