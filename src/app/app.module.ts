@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SvgexampleComponent } from './svgexample/svgexample.component';
+import { TimingDemoComponent } from './timing-demo/timing-demo.component';
+import { Component1Component } from './timing-demo/component1/component1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SvgexampleComponent
+    SvgexampleComponent,
+    TimingDemoComponent,
+    Component1Component
   ],
   imports: [
     BrowserModule,
