@@ -1,24 +1,27 @@
+Form Array Demo
 <form [formGroup]="taskForm">
   <div formArrayName="task">
     <div *ngFor="let history of taskForm['controls'].task['controls']; let i=index">
       <div [formGroupName]="i">
-        <input placeholder="Task Name" formControlName="name">
+        <input class="form-control" placeholder="Task Name" formControlName="name">
         {{taskForm.get(['task', i, 'name']).touched | json}}
       </div>
     </div>
   </div>
+  <div>
+    <button class="btn btn-danger" (click)="clear()">Clear All</button>
+    <button class="btn btn-success" (click)="addTask()">Add Task</button>
+  </div>
+
 </form>
 <hr>
 Address Form
 <form [formGroup]="addressForm">
-  <input placeholder="Address Line1" formControlName="addressLine1">
+  <input class="form-control" placeholder="Address Line1" formControlName="addressLine1">
   {{addressForm.get('addressLine1').touched}}
-  <input placeholder="Address Line2" formControlName="addressLine2">
-  <input matInput placeholder="City" formControlName="city">
+  <input class="form-control" placeholder="Address Line2" formControlName="addressLine2">
+  <input class="form-control" matInput placeholder="City" formControlName="city">
 </form>
 
-<button (click)="addTask()">Add Task</button>
 
-<button (click)="markAsTouched()">ValidateAll</button>
-
-<button (click)="clear()">Clear All</button>
+<button class="btn btn-success" (click)="markAsTouched()">ValidateAll</button>
